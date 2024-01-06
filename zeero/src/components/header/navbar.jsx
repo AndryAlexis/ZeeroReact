@@ -3,22 +3,23 @@ import { Squash as Hamburger } from 'hamburger-react'
 import { useState } from "react"
 
 const Navbar = ({headerHeight}) => {
+    const [isOpen, setOpen] = useState(false) //For control the main menu mobile states
+
+    //Params for hamburger package
     const hamburgerIcon = {
         size : 30,
-        duration : .4,
+        duration : .4, //Animation
         color : 'white',
-        label : 'Show main menu mobile',
+        label : 'Show main menu mobile', //For accesibility
         hideOutline : true
     }
-
-    const [isOpen, setOpen] = useState(false)
-
+    //React styles for nav element
     const navStyle = {
-        transform: `translateY(${headerHeight}px)`
+        transform: `translateY(${headerHeight}px)`, //It places it just below the header
+        height: `calc(100dvh - ${headerHeight}px)` //Full screen height from below the header
     }
 
     return <>
-        <input hidden type="checkbox" name="toggle-main-navbar" id="toggle-main-navbar" />
         <label htmlFor="toggle-main-navbar" className="md:hidden">
             <Hamburger 
                 size={hamburgerIcon.size}
@@ -32,13 +33,10 @@ const Navbar = ({headerHeight}) => {
             />
         </label>
         <nav 
-            className='
-                text-white bg-[#01e1ff59] absolute w-screen h-[100dvh] top-0 right-0 overflow-hidden
-                md:static md:h-inherit md:w-inherit grid place-items-center md:bg-transparent md:!translate-y-0 md:overflow-auto
-            ' 
+            className='text-white bg-[#01e1ff59] absolute w-screen justify-end top-0 right-0 overflow-hidden md:static md:h-inherit md:w-inherit grid md:bg-transparent md:!translate-y-0 md:overflow-auto shadow-blue' 
             style={navStyle}
         >
-            <ul className='gap-6 flex flex-col md:flex-row w-1/3 min-w-48 bg-[black] pl-6 pr-zeero h-inherit md:w-inherit md:min-w-inherit md:px-0 md:bg-transparent md:gap-10'>
+            <ul className='relative top-[-1px] gap-6 flex flex-col md:flex-row w-1/3 min-w-48 bg-[black] pl-6 pr-zeero md:w-inherit md:static md:min-w-inherit md:!h-inherit md:px-0 md:bg-transparent md:gap-10'>
                 <li>
                     <Link to='/'>
                         Home
