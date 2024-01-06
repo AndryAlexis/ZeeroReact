@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useRef, useState, useEffect } from "react"
+import logo from '../../assets/img/webp/logo-zeero.webp'
 
 import Navbar from "./navbar"
 
@@ -18,7 +19,8 @@ const Header = () => {
             type="checkbox" 
             name="toggle-main-menu-mobile" 
             id="toggle-main-menu-mobile"
-            className="[&:checked+header+label]:pointer-events-auto [&:checked+header+label]:bg-[#46464677] [&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
+            className="[&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
+            // className="[&:checked+header+div]:pointer-events-auto [&:checked+header+div]:bg-[#46464677] [&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
         />
         <header 
             ref={headerRef} 
@@ -28,7 +30,7 @@ const Header = () => {
                 <Link to='/'>
                     <h1>
                         <img 
-                            src="https://picsum.photos/130/70" 
+                            src={logo}
                             alt="Zeero logo" 
                             width={130} 
                             height={70}
@@ -39,13 +41,11 @@ const Header = () => {
                 <Navbar className="relative z-[1]" headerHeight={headerHeight}/>
             </div>
         </header>
-        {/*  */}
-        <label 
+        {/* <div 
             htmlFor="toggle-main-menu-mobile"
-            onClick={() => console.log('lol')}
             className="absolute w-full h-[100dvh] left-0 top-0 pointer-events-none transition-colors duration-500 ease"
         >
-        </label>
+        </div> */}
     </>
 }
 

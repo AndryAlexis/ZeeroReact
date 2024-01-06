@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+const zeeroMax = '120rem'
 
 export default {
   content: [
@@ -14,9 +17,13 @@ export default {
     'translate-x-full'
  ],
   theme: {
+    screens: {
+      ...defaultTheme.screens,
+      'zeero-max' : zeeroMax
+    },
     extend: {
       maxWidth: {
-        'zeero' : '120rem'
+        'zeero' : zeeroMax
       },
       padding: {
         'zeero' : '4vw',
@@ -34,8 +41,9 @@ export default {
     },
     colors: {
       ...colors,
-      'zeero-primary' : 'black',
-      'zeero-on-primary' : 'white'
+      'zeero-primary' : '#383736',
+      'zeero-on-primary' : 'white',
+      'zeero-on-primary-1' : '#8c9481'
     },
   },
   plugins: [],
