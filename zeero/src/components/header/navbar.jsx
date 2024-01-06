@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom"
 import { Squash as Hamburger } from 'hamburger-react'
-import { useState } from "react"
 
 const Navbar = ({headerHeight}) => {
-    const [isOpen, setOpen] = useState(false) //For control the main menu mobile states
 
     //Params for hamburger package
     const hamburgerIcon = {
@@ -20,23 +18,23 @@ const Navbar = ({headerHeight}) => {
     }
 
     return <>
-        <label htmlFor="toggle-main-navbar" className="md:hidden">
+        <label htmlFor="toggle-main-menu-mobile" className="md:hidden">
             <Hamburger 
                 size={hamburgerIcon.size}
                 duration={hamburgerIcon.duration}
                 color={hamburgerIcon.color}
                 label={hamburgerIcon.label}
                 hideOutline={hamburgerIcon.hideOutline}
-                toggled={isOpen} 
-                toggle={setOpen}
                 className='relative z-10'
             />
         </label>
         <nav 
-            className='text-white bg-[#01e1ff59] absolute w-screen justify-end top-0 right-0 overflow-hidden md:static md:h-inherit md:w-inherit grid md:bg-transparent md:!translate-y-0 md:overflow-auto shadow-blue' 
+            className='text-white absolute justify-end top-0 right-0 overflow-hidden md:static md:!h-inherit md:w-inherit grid md:bg-transparent md:!translate-y-0 md:overflow-auto shadow-blue' 
             style={navStyle}
         >
-            <ul className='relative top-[-1px] gap-6 flex flex-col md:flex-row w-1/3 min-w-48 bg-[black] pl-6 pr-zeero md:w-inherit md:static md:min-w-inherit md:!h-inherit md:px-0 md:bg-transparent md:gap-10'>
+            <ul 
+                className='relative top-0 left-full translate-x-0 gap-6 flex flex-col md:flex-row w-1/3 min-w-48 bg-[black] pl-6 pr-zeero md:w-inherit md:static md:min-w-inherit md:!h-inherit md:px-0 md:bg-transparent md:gap-10 md:translate-x-[initial] will-change-transform transition-transform duration-500 ease'
+            >
                 <li>
                     <Link to='/'>
                         Home

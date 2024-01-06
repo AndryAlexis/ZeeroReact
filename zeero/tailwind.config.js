@@ -9,6 +9,10 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./routes/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'zeero-primary',
+    'translate-x-full'
+ ],
   theme: {
     extend: {
       maxWidth: {
