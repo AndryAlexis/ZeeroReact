@@ -3,19 +3,58 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-      font-family: Proxima Nova;
-      font-weight: 400;
-      src: url(../) format("woff");
-    }
-    @font-face {
-      font-family: Proxima Nova;
-      font-weight: 500;
-      src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
-    }
+  @font-face {
+    font-family: poppins;
+    font-weight: 100;
+    font-style: normal;
+    src: url(./assets/font/Poppins-Thin.ttf) format("truetype");
   }
-
-@layer components {
-
+  @font-face {
+    font-family: poppins;
+    font-weight: 200;
+    font-style: normal;
+    src: url(./assets/font/Poppins-ExtraLight.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 300;
+    font-style: normal;
+    src: url(./assets/font/Poppins-Light.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 400;
+    font-style: normal;
+    src: url(./assets/font/Poppins-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 500;
+    font-style: normal;
+    src: url(./assets/font/Poppins-Medium.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 600;
+    font-style: normal;
+    src: url(./assets/font/Poppins-SemiBold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 700;
+    font-style: normal;
+    src: url(./assets/font/Poppins-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 800;
+    font-style: normal;
+    src: url(./assets/font/Poppins-ExtraBold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: poppins;
+    font-weight: 900;
+    font-style: normal;
+    src: url(./assets/font/Poppins-Black.ttf) format("truetype");
+  }
 }
-

@@ -1,45 +1,80 @@
+import React, { useEffect, useState, useRef } from 'react'
 import data from './data'
 
+const MILISECONDS = 3000 //Fade transition
+
 const Slider = () => {
-    return <div className='h-[115dvh]'>
-        {data.map(d => (
-            <picture className='h-inherit'>
-                {d.source.map(source => (
+    const [currentPosPicture, setCurrentPosPicture] = useState(data.length - 1)
+    const picturesRef = useRef(data.map(() => React.createRef()))
+    const [pictures] = useState(
+        data.map((d, i) => (
+            <picture
+                ref={picturesRef.current[i]}
+                key={i}
+                className='h-inherit transition-opacity duration-[1.5s] ease'
+                style={{zIndex: i}}
+            >
+                {d.source.map((source, i) => (
                     <source
+                        key={i}
                         media={source.media}
                         srcSet={source.srcSet}
                         type={source.type}
                     />)
                 )}
-                <img className='h-inherit object-cover object-center' src={d.src} alt={d.alt} />
+                <img 
+                    className='h-inherit block object-cover object-center' 
+                    src={d.src} 
+                    alt={d.alt} 
+                />
             </picture>
-        ))}
-        {/* <picture>
-            <source 
-                media="(min-width: 0px)" 
-                srcSet="https://picsum.photos/id/1/2000/1000"
-                type="image/webp"
-            />
-            <img 
-                src="https://picsum.photos/id/1/2000/1000" 
-                alt="Estructura de madera en cielo despejado"
-            />
-        </picture> */}
+        ))
+    )
 
-        {/* <picture>
-            <source
-            type="image/avif"
-            srcSet="image-url-300.avif 300w, image-url-768.avif 768w, image-url-1280.avif 1280w"
-            sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
-            />
-            <source
-            type="image/jpeg"
-            srcSet="image-url-300.jpg 300w, image-url-768.jpg 768w, image-url-1280.jpg 1280w"
-            sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
-            />
-            <img src="image-url-1280.jpg" />
-        </picture> */}
-    </div>
+    useEffect(() => {
+        const MAX = data.length - 1
+        let timeoutID = null
+
+        const intervarID = setInterval(() => {
+            console.log('CAMBIO')
+            picturesRef.current[currentPosPicture].current.classList.add('opacity-0')
+            // picturesRef.current[currentPosPicture - 1].current.style.zIndex = 1
+            
+            
+            setCurrentPosPicture(currentPosPicture - 1)
+
+            //Estamos en la PENULTIMA posición
+            if (currentPosPicture == 1) {
+                picturesRef.current[MAX].current.style.zIndex = -1
+                picturesRef.current[MAX].current.classList.remove('opacity-0')
+            }
+            
+            if (currentPosPicture < 1) {
+                console.log('VUELTA')
+                timeoutID = setInterval(() => {
+                    console.log('ANIM FINISH')
+                    clearTimeout(timeoutID)
+
+                    picturesRef.current[MAX].current.style.zIndex = MAX
+
+                    picturesRef.current.map(pr => pr.current.classList.remove('opacity-0'))
+                }, 1500)
+                setCurrentPosPicture(MAX)
+            }       
+
+        }, MILISECONDS)
+        // Clear the interval when unmounting the component or when a change occurs in currentPicture
+        return () => {
+            clearInterval(intervarID)
+            // clearTimeout(timeoutID)
+        } 
+    }, [currentPosPicture])
+
+    return <>
+        <div className='h-[115dvh] w-full relative [&>picture:not(:first-child)]:absolute [&>picture:not(:first-child)]:top-0 [&>picture:not(:first-child)]:left-0'>
+            {pictures}
+        </div>
+    </> 
 }
 
 export default Slider

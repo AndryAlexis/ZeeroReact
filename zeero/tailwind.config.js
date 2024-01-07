@@ -13,10 +13,13 @@ export default {
     "./routes/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    'zeero-primary',
-    'translate-x-full'
+    'z-1', //COMPROBAR SI USARÉ ESTO. EN EL SLIDER AL MENOS
+    'opacity-0', //Saved for use as fade affect on home page slider
  ],
   theme: {
+    fontFamily: {
+      'zeero' : ['poppins', ...defaultTheme.fontFamily.sans],
+    },
     screens: {
       ...defaultTheme.screens,
       'zeero-max' : zeeroMax
@@ -38,6 +41,9 @@ export default {
       height: {
         'inherit' : 'inherit'
       },
+      zIndex: {
+        '1' : '1'
+      }
     },
     colors: {
       ...colors,

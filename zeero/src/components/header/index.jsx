@@ -24,7 +24,7 @@ const Header = () => {
         />
         <header 
             ref={headerRef} 
-            className="flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-[1]"
+            className="flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-1 uppercase tracking-widest"
         >
             <div className="flex justify-between items-center flex-1 max-w-zeero">
                 <Link to='/'>
@@ -38,7 +38,10 @@ const Header = () => {
                         />
                     </h1>
                 </Link>
-                <Navbar className="relative z-[1]" headerHeight={headerHeight}/>
+                <Navbar 
+                    className="relative z-1" 
+                    headerHeight={headerHeight}
+                />
             </div>
         </header>
         {/* <div 
