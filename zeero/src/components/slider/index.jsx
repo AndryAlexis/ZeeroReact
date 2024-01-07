@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import data from './data'
+import Dots from './dots'
 
 const MILISECONDS = 3000 //Fade transition
 
@@ -68,6 +69,7 @@ const Slider = () => {
     return <>
         <div className='h-[115vh] w-full relative [&>picture:not(:first-child)]:absolute [&>picture:not(:first-child)]:top-0 [&>picture:not(:first-child)]:left-0'>
             {pictures}
+            <Dots/>
         </div>
     </> 
 }

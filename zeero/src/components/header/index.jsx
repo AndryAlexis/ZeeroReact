@@ -27,7 +27,7 @@ const Header = () => {
             ref={headerRef} 
             className="flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-[999] uppercase tracking-widest"
         >
-            <div className="flex justify-between items-center flex-1 max-w-zeero">
+            <div className="flex justify-between items-center flex-1">
                 <Link to='/'>
                     <h1>
                         <img 
