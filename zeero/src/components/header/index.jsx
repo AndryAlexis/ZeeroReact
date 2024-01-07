@@ -22,9 +22,10 @@ const Header = () => {
             className="[&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
             // className="[&:checked+header+div]:pointer-events-auto [&:checked+header+div]:bg-[#46464677] [&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
         />
+        {/* <div id="top">lol</div> */}
         <header 
             ref={headerRef} 
-            className="flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-1 uppercase tracking-widest"
+            className="flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-[999] uppercase tracking-widest"
         >
             <div className="flex justify-between items-center flex-1 max-w-zeero">
                 <Link to='/'>

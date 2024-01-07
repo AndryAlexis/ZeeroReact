@@ -11,8 +11,7 @@ const Slider = () => {
             <picture
                 ref={picturesRef.current[i]}
                 key={i}
-                className='h-inherit transition-opacity duration-[1.5s] ease'
-                style={{zIndex: i}}
+                className='h-inherit w-inherit transition-opacity duration-[1.5s] ease'
             >
                 {d.source.map((source, i) => (
                     <source
@@ -23,7 +22,7 @@ const Slider = () => {
                     />)
                 )}
                 <img 
-                    className='h-inherit block object-cover object-center' 
+                    className='h-inherit w-inherit block object-cover object-center' 
                     src={d.src} 
                     alt={d.alt} 
                 />
@@ -33,13 +32,10 @@ const Slider = () => {
 
     useEffect(() => {
         const MAX = data.length - 1
-        let timeoutID = null
 
         const intervarID = setInterval(() => {
             console.log('CAMBIO')
             picturesRef.current[currentPosPicture].current.classList.add('opacity-0')
-            // picturesRef.current[currentPosPicture - 1].current.style.zIndex = 1
-            
             
             setCurrentPosPicture(currentPosPicture - 1)
 
@@ -50,28 +46,27 @@ const Slider = () => {
             }
             
             if (currentPosPicture < 1) {
-                console.log('VUELTA')
-                timeoutID = setInterval(() => {
-                    console.log('ANIM FINISH')
-                    clearTimeout(timeoutID)
+                // console.log('VUELTA')
+                const timeoutID = setInterval(() => {
+                    // console.log('ANIM FINISH')
 
                     picturesRef.current[MAX].current.style.zIndex = MAX
 
                     picturesRef.current.map(pr => pr.current.classList.remove('opacity-0'))
+
+                    clearTimeout(timeoutID)
                 }, 1500)
                 setCurrentPosPicture(MAX)
             }       
 
         }, MILISECONDS)
+
         // Clear the interval when unmounting the component or when a change occurs in currentPicture
-        return () => {
-            clearInterval(intervarID)
-            // clearTimeout(timeoutID)
-        } 
+        return () => clearInterval(intervarID)
     }, [currentPosPicture])
 
     return <>
-        <div className='h-[115dvh] w-full relative [&>picture:not(:first-child)]:absolute [&>picture:not(:first-child)]:top-0 [&>picture:not(:first-child)]:left-0'>
+        <div className='h-[115vh] w-full relative [&>picture:not(:first-child)]:absolute [&>picture:not(:first-child)]:top-0 [&>picture:not(:first-child)]:left-0'>
             {pictures}
         </div>
     </> 

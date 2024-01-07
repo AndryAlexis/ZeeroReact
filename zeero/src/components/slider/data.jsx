@@ -1,14 +1,46 @@
+import home01 from '../../assets/img/webp/home/Imagen-home_01.webp'
+// import home02 from '../../assets/img/webp/home/Imagen-home_02.webp'
+import home03 from '../../assets/img/webp/home/Imagen-home_03.webp'
+import home04 from '../../assets/img/webp/home/Imagen-home_04.webp'
+
+
 const data = [
     {
         source : [
             {
                 media : '(min-width: 0px)',
-                srcSet : 'https://picsum.photos/id/10/2000/1000',
+                srcSet : home01,
                 type : 'image/webp'
             },
         ],
         img : {
-            src : 'https://picsum.photos/id/10/2000/1000', 
+            src : home01, 
+            alt : 'Estructura de madera en cielo despejado'
+        }
+    },
+    // {
+    //     source : [
+    //         {
+    //             media : '(min-width: 0px)',
+    //             srcSet : home02,
+    //             type : 'image/webp'
+    //         },
+    //     ],
+    //     img : {
+    //         src : home02, 
+    //         alt : 'Estructura de madera en cielo despejado'
+    //     }
+    // },
+    {
+        source : [
+            {
+                media : '(min-width: 0px)',
+                srcSet : home03,
+                type : 'image/webp'
+            },
+        ],
+        img : {
+            src : home03, 
             alt : 'Estructura de madera en cielo despejado'
         }
     },
@@ -16,51 +48,12 @@ const data = [
         source : [
             {
                 media : '(min-width: 0px)',
-                srcSet : 'https://picsum.photos/id/11/2000/1000',
+                srcSet : home04,
                 type : 'image/webp'
             },
         ],
         img : {
-            src : 'https://picsum.photos/id/11/2000/1000', 
-            alt : 'Estructura de madera en cielo despejado'
-        }
-    },
-    {
-        source : [
-            {
-                media : '(min-width: 0px)',
-                srcSet : 'https://picsum.photos/id/12/2000/1000',
-                type : 'image/webp'
-            },
-        ],
-        img : {
-            src : 'https://picsum.photos/id/12/2000/1000', 
-            alt : 'Estructura de madera en cielo despejado'
-        }
-    },
-    {
-        source : [
-            {
-                media : '(min-width: 0px)',
-                srcSet : 'https://picsum.photos/id/13/2000/1000',
-                type : 'image/webp'
-            },
-        ],
-        img : {
-            src : 'https://picsum.photos/id/13/2000/1000', 
-            alt : 'Estructura de madera en cielo despejado'
-        }
-    },
-    {
-        source : [
-            {
-                media : '(min-width: 0px)',
-                srcSet : 'https://picsum.photos/id/14/2000/1000',
-                type : 'image/webp'
-            },
-        ],
-        img : {
-            src : 'https://picsum.photos/id/14/2000/1000', 
+            src : home04, 
             alt : 'Estructura de madera en cielo despejado'
         }
     },

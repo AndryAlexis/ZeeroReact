@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Squash as Hamburger } from 'hamburger-react'
+import { Turn as Hamburger } from 'hamburger-react'
 
 const Navbar = ({headerHeight}) => {
 
@@ -14,8 +14,12 @@ const Navbar = ({headerHeight}) => {
     //React styles for nav element
     const navStyle = {
         transform: `translateY(${headerHeight}px)`, //It places it just below the header
-        height: `calc(100dvh - ${headerHeight}px)` //Full screen height from below the header
+        height: `calc(100dvh)` //Full screen height from below the header
     }
+
+    const goToTopWindow = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
+    const disableBodyScroll = () => document.body.style.overflow = 'hidden'
+    const enableBodyScroll = () => document.body.style.overflow = 'auto'
 
     return <>
         <label htmlFor="toggle-main-menu-mobile" className="md:hidden">
@@ -26,6 +30,15 @@ const Navbar = ({headerHeight}) => {
                 label={hamburgerIcon.label}
                 hideOutline={hamburgerIcon.hideOutline}
                 className='relative z-10'
+                onToggle={(state) => {
+                    goToTopWindow()
+
+                    if (state) {
+                        disableBodyScroll()
+                    } else {
+                        enableBodyScroll()
+                    }
+                }} //Go to top scroll
             />
         </label>
         <nav 
