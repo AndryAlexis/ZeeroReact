@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useRef, useState, useEffect } from "react"
-import logo from '../../assets/img/webp/logo-zeero.webp'
+import logo from '../../assets/img/webp/logo-zeero-architecture-studio.png'
 
 import Navbar from "./navbar"
 

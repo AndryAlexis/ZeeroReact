@@ -21,14 +21,18 @@ const Slider = () => {
                     <source
                         key={i}
                         media={source.media}
+                        sizes={source.size}
                         srcSet={source.srcSet}
                         type={source.type}
                     />)
                 )}
-                <img 
+                <img
+                    loading='lazy'
                     className='h-inherit w-inherit block object-cover object-center' 
                     src={d.src} 
-                    alt={d.alt} 
+                    alt={d.alt}
+                    width={d.width}
+                    height={d.height}
                 />
             </picture>
         ))
