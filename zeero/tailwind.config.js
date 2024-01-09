@@ -13,7 +13,7 @@ export default {
     "./routes/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    'z-1', //COMPROBAR SI USARÉ ESTO. EN EL SLIDER AL MENOS
+    '!bg-transparent',
     'opacity-0', //Saved for use as fade affect on home page slider
  ],
   theme: {

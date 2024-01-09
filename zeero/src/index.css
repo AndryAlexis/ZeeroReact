@@ -58,7 +58,3 @@
     src: url(./assets/font/Poppins-Black.ttf) format("truetype");
   }
 }
-
-html {
-  scroll-behavior: smooth;
-}

@@ -6,8 +6,8 @@ const Home = () => {
         <Header />
         <main>
             <Slider />
-            <section className='h-[75vh] max-w-zeero mx-auto bg-zeero-primary text-zeero-on-primary grid place-items-center px-zeero font-zeero'>
-                <div className='text-center grid gap-8'>
+            <section className='h-[75vh] w-full bg-zeero-primary text-zeero-on-primary grid place-items-center px-zeero font-zeero'>
+                <div className='text-center grid gap-8 max-w-zeero mx-auto'>
                     <h2 className='text-5xl font-light'>
                         Zeero philosophy
                     </h2>

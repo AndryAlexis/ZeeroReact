@@ -1,5 +1,5 @@
 import home01 from '../../assets/img/webp/home/Imagen-home_01.webp'
-// import home02 from '../../assets/img/webp/home/Imagen-home_02.webp'
+import home02 from '../../assets/img/webp/home/Imagen-home_02.webp'
 import home03 from '../../assets/img/webp/home/Imagen-home_03.webp'
 import home04 from '../../assets/img/webp/home/Imagen-home_04.webp'
 

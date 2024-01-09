@@ -2,7 +2,9 @@ import React, { useEffect, useState, useRef } from 'react'
 import data from './data'
 import Dots from './dots'
 
-const MILISECONDS = 3000 //Fade transition
+const TIME_BETWEEN_IMAGES = 6000 //Fade transition in miliseconds
+const TIME_TRANSITION_IMAGE = 2000
+const PICTURES_KEY = 'slider_pictures_key'
 
 const Slider = () => {
     const [currentPosPicture, setCurrentPosPicture] = useState(data.length - 1)
@@ -11,8 +13,9 @@ const Slider = () => {
         data.map((d, i) => (
             <picture
                 ref={picturesRef.current[i]}
-                key={i}
-                className='h-inherit w-inherit transition-opacity duration-[1.5s] ease'
+                key={`${PICTURES_KEY}_${i}`}
+                className='h-inherit w-inherit transition-opacity ease'
+                style={{transitionDuration: `${TIME_TRANSITION_IMAGE}ms`}}
             >
                 {d.source.map((source, i) => (
                     <source
@@ -35,32 +38,27 @@ const Slider = () => {
         const MAX = data.length - 1
 
         const intervarID = setInterval(() => {
-            console.log('CAMBIO')
             picturesRef.current[currentPosPicture].current.classList.add('opacity-0')
             
             setCurrentPosPicture(currentPosPicture - 1)
 
-            //Estamos en la PENULTIMA posición
             if (currentPosPicture == 1) {
                 picturesRef.current[MAX].current.style.zIndex = -1
                 picturesRef.current[MAX].current.classList.remove('opacity-0')
             }
             
             if (currentPosPicture < 1) {
-                // console.log('VUELTA')
                 const timeoutID = setInterval(() => {
-                    // console.log('ANIM FINISH')
 
                     picturesRef.current[MAX].current.style.zIndex = MAX
-
                     picturesRef.current.map(pr => pr.current.classList.remove('opacity-0'))
 
                     clearTimeout(timeoutID)
-                }, 1500)
+                }, TIME_TRANSITION_IMAGE)
                 setCurrentPosPicture(MAX)
             }       
 
-        }, MILISECONDS)
+        }, TIME_BETWEEN_IMAGES)
 
         // Clear the interval when unmounting the component or when a change occurs in currentPicture
         return () => clearInterval(intervarID)
@@ -69,8 +67,11 @@ const Slider = () => {
     return <>
         <div className='h-[115vh] w-full relative [&>picture:not(:first-child)]:absolute [&>picture:not(:first-child)]:top-0 [&>picture:not(:first-child)]:left-0'>
             {pictures}
-            <Dots/>
         </div>
+        <Dots
+            timeBtwnImages={TIME_BETWEEN_IMAGES}
+            timeTransitionImage={TIME_TRANSITION_IMAGE}
+        />
     </> 
 }
 
