@@ -32,6 +32,52 @@ const data = [
             {
                 media : '(max-width: 640px)',
                 size : '(max-width: 640px)',
+                srcSet : `${building3_640x1000px} 640w`,
+                type : 'image/webp'
+            },
+            {
+                media : '(max-width: 768px)',
+                size : '(max-width: 768px)',
+                srcSet : `${building3_768x1200px} 768w`,
+                type : 'image/webp'
+            },
+            {
+                media : '(max-width: 1024px)',
+                size : '(max-width: 1024px)',
+                srcSet : `${building3_1024x1200px} 1024w`,
+                type : 'image/webp'
+            },
+            {
+                media : '(max-width: 1280px)',
+                size : '(max-width: 1280px)',
+                srcSet : `${building3_1280x1200px} 1280w`,
+                type : 'image/webp'
+            },
+            {
+                media : '(max-width: 1536px)',
+                size : '(max-width: 1536px)',
+                srcSet : `${building3_1536x1200px} 1536w`,
+                type : 'image/webp'
+            },
+            {
+                media : '(min-width: 1537px)',
+                size : '(min-width: 1537px)',
+                srcSet : `${building3_1980x1000px} 1980w`,
+                type : 'image/webp'
+            },
+        ],
+        img : {
+            src : building3_1980x1000px, 
+            alt : 'Vigas de madera',
+            width : 1980,
+            height : 1000
+        }
+    },
+    {
+        source : [
+            {
+                media : '(max-width: 640px)',
+                size : '(max-width: 640px)',
                 srcSet : `${building0_640x1000px} 640w`,
                 type : 'image/webp'
             },
@@ -161,52 +207,6 @@ const data = [
         img : {
             src : building2_1980x1000px, 
             alt : 'Construcción blanca, lisa e inclinada',
-            width : 1980,
-            height : 1000
-        }
-    },
-    {
-        source : [
-            {
-                media : '(max-width: 640px)',
-                size : '(max-width: 640px)',
-                srcSet : `${building3_640x1000px} 640w`,
-                type : 'image/webp'
-            },
-            {
-                media : '(max-width: 768px)',
-                size : '(max-width: 768px)',
-                srcSet : `${building3_768x1200px} 768w`,
-                type : 'image/webp'
-            },
-            {
-                media : '(max-width: 1024px)',
-                size : '(max-width: 1024px)',
-                srcSet : `${building3_1024x1200px} 1024w`,
-                type : 'image/webp'
-            },
-            {
-                media : '(max-width: 1280px)',
-                size : '(max-width: 1280px)',
-                srcSet : `${building3_1280x1200px} 1280w`,
-                type : 'image/webp'
-            },
-            {
-                media : '(max-width: 1536px)',
-                size : '(max-width: 1536px)',
-                srcSet : `${building3_1536x1200px} 1536w`,
-                type : 'image/webp'
-            },
-            {
-                media : '(min-width: 1537px)',
-                size : '(min-width: 1537px)',
-                srcSet : `${building3_1980x1000px} 1980w`,
-                type : 'image/webp'
-            },
-        ],
-        img : {
-            src : building3_1980x1000px, 
-            alt : 'Vigas de madera',
             width : 1980,
             height : 1000
         }

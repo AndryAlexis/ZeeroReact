@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import { useRef, useState, useEffect } from "react"
+// import logo from '../../assets/img/webp/logo-zeero-architecture-studio.png'
 import logo from '../../assets/img/webp/logo-zeero-architecture-studio.png'
+
 
 import Navbar from "./navbar"
 
@@ -33,9 +35,9 @@ const Header = () => {
                         <img 
                             src={logo}
                             alt="Zeero logo" 
-                            width={130} 
-                            height={70}
-                            className="min-h-[70px]"
+                            width={146} 
+                            height={60}
+                            className="w-[146px] h-[60px]"
                         />
                     </h1>
                 </Link>
