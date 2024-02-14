@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { useRef, useState, useEffect } from "react"
-// import logo from '../../assets/img/webp/logo-zeero-architecture-studio.png'
 import logo from '../../assets/img/webp/logo-zeero-architecture-studio.png'
 
 
@@ -24,7 +23,6 @@ const Header = () => {
             className="[&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
             // className="[&:checked+header+div]:pointer-events-auto [&:checked+header+div]:bg-[#46464677] [&:checked+header_ul]:translate-x-[-100%] md:[&:checked+header_ul]:translate-x-0"
         />
-        {/* <div id="top">lol</div> */}
         <header 
             ref={headerRef} 
             className="flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-[999] uppercase tracking-widest"
@@ -47,11 +45,6 @@ const Header = () => {
                 />
             </div>
         </header>
-        {/* <div 
-            htmlFor="toggle-main-menu-mobile"
-            className="absolute w-full h-[100dvh] left-0 top-0 pointer-events-none transition-colors duration-500 ease"
-        >
-        </div> */}
     </>
 }
 

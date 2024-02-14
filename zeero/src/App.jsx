@@ -1,4 +1,4 @@
-import './App.css'
+import { useState } from 'react'
 import {
   createHashRouter,
   RouterProvider
@@ -9,7 +9,9 @@ import Projects from './routes/projects'
 import AboutUs from './routes/aboutUs'
 import Contact from './routes/contact'
 
-function App() {
+import CookieConsent, {KEY_COOKIE_CONSENT} from './components/cookieConsent'
+
+const App = () => { 
   const router = createHashRouter(
     [
       {
@@ -31,7 +33,10 @@ function App() {
     ]
   )
 
-  return <RouterProvider router={router}/>
+  return <>
+    <RouterProvider router={router}/>
+    <CookieConsent/>
+  </>
 }
 
 export default App
