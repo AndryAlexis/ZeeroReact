@@ -36,7 +36,7 @@ const Navbar = ({headerHeight}) => {
                 className='[box-shadow:0_-5px_0_0_#383736] h-fit pb-10 font-zeero font-extralight relative top-0 left-full translate-x-0 gap-6 flex flex-col md:pb-0 md:flex-row w-1/3 min-w-48 bg-zeero-primary pl-6 pr-zeero md:w-inherit md:static md:min-w-inherit md:!h-inherit md:px-0 md:bg-transparent md:gap-16 md:translate-x-[initial] will-change-transform transition-transform duration-500 ease'
             >
                 <li className="text-zeero-on-primary-1">
-                    <Link to='/' className="pointer-events-none">
+                    <Link to='/'>
                         Home
                     </Link>
                 </li>

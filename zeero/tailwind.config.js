@@ -49,7 +49,8 @@ export default {
       ...colors,
       'zeero-primary' : '#383736',
       'zeero-on-primary' : 'white',
-      'zeero-on-primary-1' : '#8c9481'
+      'zeero-on-primary-1' : '#8c9481',
+      'zeero-green' : '#8c9481'
     },
   },
   plugins: [],
