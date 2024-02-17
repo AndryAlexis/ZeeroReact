@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { Helmet } from 'react-helmet';
+
 import data from './data'
 import Dots from './dots'
 
 const TIME_BETWEEN_IMAGES = 6000 //Fade transition in miliseconds
 const TIME_TRANSITION_IMAGE = 2000
 const PICTURES_KEY = 'slider_pictures_key'
+const SOURCES_KEY = 'slider_sources_key'
+const IMGS_KEY = 'slider_img_key'
 
 const Slider = () => {
     const [currentPosPicture, setCurrentPosPicture] = useState(data.length - 1)
@@ -17,17 +21,21 @@ const Slider = () => {
                 className='h-inherit w-inherit transition-opacity ease'
                 style={{transitionDuration: `${TIME_TRANSITION_IMAGE}ms`}}
             >
-                {d.source.map((source, i) => (
-                    <source
-                        key={i}
-                        media={source.media}
-                        sizes={source.size}
-                        srcSet={source.srcSet}
-                        type={source.type}
-                    />)
-                )}
+                {d.source.map((source, j) => (
+                    <React.Fragment key={`${SOURCES_KEY}_${i}_${j}`}>
+                        <Helmet >
+                            <link rel="preload" href={source.srcSet} as="image" />
+                        </Helmet>
+                        <source
+                            media={source.media}
+                            sizes={source.size}
+                            srcSet={source.srcSet}
+                            type={source.type}
+                        />
+                    </React.Fragment>
+                ))}
                 <img
-                    loading='lazy'
+                    key={`${IMGS_KEY}_${i}`}  // Asignar clave única a <img>
                     className='h-inherit w-inherit block object-cover object-center' 
                     src={d.src} 
                     alt={d.alt}
@@ -37,6 +45,7 @@ const Slider = () => {
             </picture>
         ))
     )
+    
 
     useEffect(() => {
         const MAX = data.length - 1
