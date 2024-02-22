@@ -24,7 +24,7 @@ const CookieConsent = () => {
                 <p>
                     Este sitio web <strong className="font-bold">NO</strong> utiliza cookies propias ni de terceros.
                 </p>
-                <label htmlFor="cookieConsent" className="py-2 cursor-pointer uppercase tracking-widest text-zeero-green border px-4 border-zeero-green" onClick={handleCookieConsent}>
+                <label htmlFor="cookieConsent" className="py-2 cursor-pointer uppercase tracking-widest border px-4" onClick={handleCookieConsent}>
                     Aceptar
                 </label>
             </div>

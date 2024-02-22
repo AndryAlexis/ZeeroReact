@@ -18,7 +18,7 @@ export default {
  ],
   theme: {
     fontFamily: {
-      'zeero' : ['poppins', ...defaultTheme.fontFamily.sans],
+      'zeero' : ['poppins', ...defaultTheme.fontFamily.sans, {'font-display': 'swap',}],
     },
     screens: {
       ...defaultTheme.screens,

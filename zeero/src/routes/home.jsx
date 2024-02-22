@@ -13,13 +13,11 @@ const Home = () => {
                         <img className='block w-[145px] h-[36px]' src={logo} alt="logo zeero" width={150} height={90} /> philosophy
                     </h2>
                     <p className='max-w-3xl font-extralight'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, cupiditate saepe odit veniam voluptate placeat a, totam esse, vel delectus dicta autem vitae perspiciatis porro iusto quidem nihil velit iure non minus nemo consequuntur. Saepe, sunt? Quos eaque quas eligendi voluptatibus nihil maiores cupiditate molestias, similique repudiandae ad reiciendis quidem!
+                        A Zeero Studio ens dediquem a la creació de projectes arquitectònics amb un enfocament cap a la sostenibilitat i l’eficiència energètica, apostant per edificis de consum gairebé zero. El nostre compromís no s’atura en l’estructura externa; ens endinsem en el disseny d’espais interiors, prioritzant la salut i el benestar dels usuaris per a fomentar una millora substancial en la seva qualitat de vida. Cada línia traçada i cada material escollit son decisions preses per generar entre tots un futur més sostenible.
                     </p>
                 </div>
             </section>
         </main>
-
-
     </>
 }
 
