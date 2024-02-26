@@ -33,7 +33,7 @@ const Home = () => {
     // Description content
     const description = (
         <p className={styles.p}>
-            At Zeero Studio, we focus on creating architectural projects with an emphasis on sustainability and energy efficiency, aiming for nearly zero energy buildings. Our commitment extends beyond the external structure; we delve into the design of interior spaces, prioritizing the health and well-being of users to foster a substantial improvement in their quality of life. Every line drawn and every material chosen are decisions made to collectively generate a more sustainable future.
+            A Zeero Studio ens dediquem a la creació de projectes arquitectònics amb un enfocament cap a la sostenibilitat i l’eficiència energètica, apostant per edificis de consum gairebé zero. El nostre compromís no s’atura en l’estructura externa; ens endinsem en el disseny d’espais interiors, prioritzant la salut i el benestar dels usuaris per a fomentar una millora substancial en la seva qualitat de vida. Cada línia traçada i cada material escollit son decisions preses per generar entre tots un futur més sostenible.
         </p>
     )
 
