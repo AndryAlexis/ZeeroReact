@@ -3,31 +3,30 @@ import Header from '../components/header'
 import Slider from '../components/slider'
 import logoSrc from '../assets/img/webp/logo-zeero.png'
 
+// TailwindCSS styles used in this component
+const styles = {
+    section: 'h-[75vh] w-full bg-zeero-primary text-zeero-on-primary grid place-items-center px-zeero font-zeero',
+    div: 'text-center grid gap-8 max-w-zeero mx-auto',
+    h2: 'text-5xl font-light flex items-baseline justify-center gap-4 flex-wrap',
+    img: (width, height) => `block w-[${width}px] h-[${height}px]`,
+    p: 'max-w-3xl font-extralight'
+}
+
+// Logo properties
+const logoProperties = {
+    src: logoSrc,
+    width: 145,
+    height: 90,
+    alt: 'Logo ZEERO'
+}
+
+logoProperties.className = styles.img(logoProperties.width, logoProperties.height)
+
 const Home = () => {
-    // TailwindCSS styles used in this component
-    const styles = {
-        section: 'h-[75vh] w-full bg-zeero-primary text-zeero-on-primary grid place-items-center px-zeero font-zeero',
-        div: 'text-center grid gap-8 max-w-zeero mx-auto',
-        h2: 'text-5xl font-light flex items-baseline justify-center gap-4 flex-wrap',
-        img: 'block w-[145px] h-[36px]',
-        p: 'max-w-3xl font-extralight'
-    }
-
-    // Logo properties
-    const logo = {
-        src: logoSrc,
-        width: 150,
-        height: 90,
-        alt: 'Logo ZEERO'
-    }
-
     // Generates the title with the logo
     const generateTitle = () => (
         <h2 className={styles.h2}>
-            <img
-                {...logo}
-                className={styles.img}
-            /> Philosophy
+            <img {...logoProperties} /> Philosophy
         </h2>
     )
 

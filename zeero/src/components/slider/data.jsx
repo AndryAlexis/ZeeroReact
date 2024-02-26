@@ -1,31 +1,33 @@
-import building0_640x1000px from '../../assets/img/webp/home/zeero-architecture-0/building_640x1000.webp'
-import building0_768x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_768x1200.webp'
-import building0_1024x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_1024x1200.webp'
-import building0_1280x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_1280x1200.webp'
-import building0_1536x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_1536x1200.webp'
-import building0_1980x1000px from '../../assets/img/webp/home/zeero-architecture-0/building_1980x1000.webp'
+// Importing webp images for the slider
+import building0_640x1000px from '../../assets/img/webp/home/zeero-architecture-0/building_640x1000.webp';
+import building0_768x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_768x1200.webp';
+import building0_1024x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_1024x1200.webp';
+import building0_1280x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_1280x1200.webp';
+import building0_1536x1200px from '../../assets/img/webp/home/zeero-architecture-0/building_1536x1200.webp';
+import building0_1980x1000px from '../../assets/img/webp/home/zeero-architecture-0/building_1980x1000.webp';
 
-import building1_640x1000px from '../../assets/img/webp/home/zeero-architecture-1/building_640x1000.webp'
-import building1_768x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_768x1200.webp'
-import building1_1024x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_1024x1200.webp'
-import building1_1280x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_1280x1200.webp'
-import building1_1536x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_1536x1200.webp'
-import building1_1980x1000px from '../../assets/img/webp/home/zeero-architecture-1/building_1980x1200.webp'
+import building1_640x1000px from '../../assets/img/webp/home/zeero-architecture-1/building_640x1000.webp';
+import building1_768x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_768x1200.webp';
+import building1_1024x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_1024x1200.webp';
+import building1_1280x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_1280x1200.webp';
+import building1_1536x1200px from '../../assets/img/webp/home/zeero-architecture-1/building_1536x1200.webp';
+import building1_1980x1000px from '../../assets/img/webp/home/zeero-architecture-1/building_1980x1200.webp';
 
-import building2_640x1000px from '../../assets/img/webp/home/zeero-architecture-2/building_640x1000.webp'
-import building2_768x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_768x1200.webp'
-import building2_1024x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_1024x1200.webp'
-import building2_1280x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_1280x1200.webp'
-import building2_1536x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_1536x1200.webp'
-import building2_1980x1000px from '../../assets/img/webp/home/zeero-architecture-2/building_1980x1200.webp'
+import building2_640x1000px from '../../assets/img/webp/home/zeero-architecture-2/building_640x1000.webp';
+import building2_768x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_768x1200.webp';
+import building2_1024x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_1024x1200.webp';
+import building2_1280x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_1280x1200.webp';
+import building2_1536x1200px from '../../assets/img/webp/home/zeero-architecture-2/building_1536x1200.webp';
+import building2_1980x1000px from '../../assets/img/webp/home/zeero-architecture-2/building_1980x1200.webp';
 
-import building3_640x1000px from '../../assets/img/webp/home/zeero-architecture-3/building_640x1200.webp'
-import building3_768x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_768x1200.webp'
-import building3_1024x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_1024x1200.webp'
-import building3_1280x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_1280x1200.webp'
-import building3_1536x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_1536x1200.webp'
-import building3_1980x1000px from '../../assets/img/webp/home/zeero-architecture-3/building_1980x1200.webp'
+import building3_640x1000px from '../../assets/img/webp/home/zeero-architecture-3/building_640x1200.webp';
+import building3_768x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_768x1200.webp';
+import building3_1024x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_1024x1200.webp';
+import building3_1280x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_1280x1200.webp';
+import building3_1536x1200px from '../../assets/img/webp/home/zeero-architecture-3/building_1536x1200.webp';
+import building3_1980x1000px from '../../assets/img/webp/home/zeero-architecture-3/building_1980x1200.webp';
 
+// Data for the slider
 const data = [
     {
         source : [
@@ -199,6 +201,7 @@ const data = [
             src : building3_1980x1000px, 
         }
     },
-]
+];
 
-export default data
+// Exporting the slider data
+export default data;

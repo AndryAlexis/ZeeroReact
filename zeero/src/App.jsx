@@ -10,6 +10,12 @@ import Contact from './routes/contact'
 
 import CookieConsent from './components/cookieConsent'
 
+
+/*
+ Esta forma de crear las rutas solo la uso para github pages
+ Para que esto funcione, dentro del fichero vite.config.js debería de haber la siguiente propiedad :
+  base: 'https://Ssadry.github.io/ZeeroReact'
+*/
 const App = () => { 
   const router = createHashRouter(
     [
@@ -39,7 +45,11 @@ const App = () => {
 }
 
 export default App
-//Descomenta "base" de vite.config.js
+
+/* 
+  Esta forma para hacer las rutas es la debería usarse cuando se vaya a subir a un servidor.
+  Para que esto funcione, se debería eliminar la propiedad 'base' del fichero vite.config.js
+*/
 
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Home from './routes/home';

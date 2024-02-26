@@ -1,8 +1,40 @@
-import { Link } from "react-router-dom"
-import { useRef, useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
+import { useRef, useState, useEffect } from 'react'
 import logoSrc from '../../assets/img/webp/logo-zeero-architecture-studio.png'
 
-import Navbar from "./navbar"
+import Navbar from './navbar'
+
+// Root path for the home link
+const ROOT_PATH = '/'
+
+// Define styles for header elements using TailwindCSS classes
+const styles = {
+    header: 'flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-[999] uppercase tracking-widest',
+    div: 'flex justify-between items-center flex-1',
+    input: '[&:checked+header_ul]:-translate-x-full md:[&:checked+header_ul]:translate-x-0',
+    navbar: 'relative z-1',
+    img: (width, height) => `w-[${width}px] h-[${height}px]`
+}
+
+// Logo properties for the image element
+const logoProperties = {
+    src: logoSrc,
+    alt: 'Logo ZEERO',
+    width: 146,
+    height: 60,
+}
+
+// Dynamically assign className using styles.img function
+logoProperties.className = styles.img(logoProperties.width, logoProperties.height)
+
+// Properties for the input element
+const inputProperties = {
+    hidden: true,
+    type: 'checkbox',
+    name: 'toggle-main-menu-mobile',
+    id: 'toggle-main-menu-mobile',
+    className: styles.input
+}
 
 const Header = () => {
     // State to track the height of the header
@@ -13,35 +45,6 @@ const Header = () => {
     useEffect(() => {
         setHeaderHeight(headerRef.current.offsetHeight)
     }, [])
-
-    // Root path for the home link
-    const ROOT_PATH = '/'
-
-    // Define styles for header elements using TailwindCSS classes
-    const styles = {
-        header: "flex justify-center items-center bg-zeero-primary px-zeero py-4 relative z-[999] uppercase tracking-widest",
-        div: "flex justify-between items-center flex-1",
-        img: "w-[146px] h-[60px]",
-        input: "[&:checked+header_ul]:-translate-x-full md:[&:checked+header_ul]:translate-x-0",
-        navbar: "relative z-1"
-    }
-
-    const inputProperties = {
-        hidden : true,
-        type : "checkbox",
-        name : "toggle-main-menu-mobile",
-        id : "toggle-main-menu-mobile",
-        className : styles.input
-    }
-
-    // Logo properties for the image element
-    const logoProperties = {
-        src: logoSrc,
-        alt: 'Logo ZEERO',
-        width: 146,
-        height: 60,
-        className: styles.img
-    }
 
     return (
         <>
