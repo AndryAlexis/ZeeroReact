@@ -12,15 +12,15 @@ export const setWithExpiry = (key, value, expiryDays) => {
 // Function to retrieve data from localStorage and check expiry date
 export const getWithExpiry = key => {
     const itemStr = localStorage.getItem(key)
+
     // If the item doesn't exist, return null
-    if (!itemStr) {
-        return null
-    }
+    if (!itemStr) return null
+
     const item = JSON.parse(itemStr)
     const now = new Date().getTime()
     
-    if (item?.expiry === undefined) 
-        return null
+    if (item?.expiry === undefined) return null
+
     // Check if the expiry date has passed
     if (now > item.expiry) {
         // If it has expired, remove the item from localStorage

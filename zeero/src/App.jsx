@@ -10,7 +10,6 @@ import Contact from './routes/contact'
 
 import CookieConsent from './components/cookieConsent'
 
-
 /*
  Esta forma de crear las rutas solo la uso para github pages
  Para que esto funcione, dentro del fichero vite.config.js debería de haber la siguiente propiedad :

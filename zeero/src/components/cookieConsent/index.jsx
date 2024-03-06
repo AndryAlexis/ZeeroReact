@@ -1,9 +1,9 @@
-import { setWithExpiry, getWithExpiry } from "../localStorageController";
+import { setWithExpiry, getWithExpiry } from "../localStorageController"
 
 // Constants
-const SHOW = '0%';
-const HIDDEN = '100%';
-const KEY_COOKIE_CONSENT = 'cookieConsented';
+const SHOW = '0%'
+const HIDDEN = '100%'
+const KEY_COOKIE_CONSENT = 'cookieConsented'
 
 const CookieConsent = () => {
   // Get cookie consent status from localStorage
@@ -11,9 +11,9 @@ const CookieConsent = () => {
 
   // Function to handle setting cookie consent
   const handleCookieConsent = () => {
-    const daysToExpire = 30;
-    setWithExpiry(KEY_COOKIE_CONSENT, true, daysToExpire);
-  };
+    const daysToExpire = 30
+    setWithExpiry(KEY_COOKIE_CONSENT, true, daysToExpire)
+  }
 
   const styles = {
     input: "[&:checked+div>div]:!translate-y-[100%] [&:checked+div]:!pointer-events-none",
@@ -27,7 +27,7 @@ const CookieConsent = () => {
     },
     strong: "font-bold",
     label: "py-2 cursor-pointer uppercase tracking-widest border px-4"
-  };
+  }
 
   // Properties for JSX elements
   const properties = {
@@ -35,6 +35,7 @@ const CookieConsent = () => {
       hidden: true,
       type: 'checkbox',
       name: 'cookieConsent',
+      id : 'cookieConsent',
       tabIndex: -1,
       className: styles.input
     },
@@ -51,7 +52,7 @@ const CookieConsent = () => {
       onClick: handleCookieConsent,
       className: styles.label
     }
-  };
+  }
 
   return (
     <>
@@ -69,7 +70,7 @@ const CookieConsent = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CookieConsent;
+export default CookieConsent
