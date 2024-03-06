@@ -119,7 +119,7 @@ const Slider = () => {
               className={styles.img}
               src={d.img.src}
               alt={img.properties.alt}
-              ref={handleImageLoad}
+              ref={(image) => handleImageLoad(image)}
             />
           </picture>
         ))}
