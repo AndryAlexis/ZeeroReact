@@ -1,23 +1,60 @@
-// Function to define styles for the navbar components.
 /**
+ * Navbar component that displays a navigation menu.
  * @param {number} headerHeight - Height of the header to adjust the menu below.
  * @returns {object} - Object containing styles for the navbar components.
  */
 const NavbarStyles = (headerHeight) => {
+    // Define breakpoints for responsive styling
+    const breakpoints = {
+        // Styles for navigation container at different breakpoints
+        nav : {
+            default : `
+                text-white absolute grid justify-end 
+                top-0 right-0 overflow-hidden shadow-blue
+            `,
+            md : `
+                md:static md:!h-inherit md:w-inherit 
+                md:bg-transparent md:!translate-y-0 md:overflow-auto
+            `
+        },
+        // Styles for navigation list at different breakpoints
+        ul : {
+            default : `
+                flex flex-col h-fit w-1/3 min-w-48 pb-10 pl-6 pr-0 gap-6
+                font-zeero font-extralight relative top-0 left-full translate-x-0 will-change-transform 
+                transition-transform duration-500 ease bg-zeero-primary [box-shadow:0_-5px_0_0_#383736]
+            `,
+            md : `
+                md:flex-row md:!h-inherit md:w-inherit md:min-w-inherit md:static 
+                md:px-0 md:pb-0 md:gap-16 md:translate-x-[initial] md:bg-transparent
+            `
+        }
+    }
+
     return {
-        label: 'md:hidden', // Style for hamburger label on mobile devices
-        hamburger: 'relative z-10', // Style for the hamburger icon
+        // Style for hamburger label on mobile devices
+        label: 'md:hidden',
+        // Style for the hamburger icon
+        hamburger: 'relative z-10',
+        // Styles for the navigation container
         nav: {
-            classes: 'text-white absolute justify-end top-0 right-0 overflow-hidden md:static md:!h-inherit md:w-inherit grid md:bg-transparent md:!translate-y-0 md:overflow-auto shadow-blue', // Styles for the navigation container
+            // Concatenate styles for different breakpoints
+            classes: `${breakpoints.nav.default} ${breakpoints.nav.md}`,
+            // CSS properties for navigation container
             css: {
-                transform: `translateY(${headerHeight}px)`, // Positions the menu just below the header
-                height: `calc(100vh - ${headerHeight}px)` // Full screen height from below the header
+                // Position the menu just below the header
+                transform: `translateY(${headerHeight}px)`,
+                // Set full screen height from below the header
+                height: `calc(100vh - ${headerHeight}px)`
             }
         },
-        ul: '[box-shadow:0_-5px_0_0_#383736] h-fit pb-10 font-zeero font-extralight relative top-0 left-full translate-x-0 gap-6 flex flex-col md:pb-0 md:flex-row w-1/3 min-w-48 bg-zeero-primary pl-6 pr-0 md:w-inherit md:static md:min-w-inherit md:!h-inherit md:px-0 md:bg-transparent md:gap-16 md:translate-x-[initial] will-change-transform transition-transform duration-500 ease', // Styles for the navigation list
-        li: 'text-zeero-on-primary-1', // Styles for list items
-        link: 'pointer-events-none opacity-20' // Styles for navigation links
-    };
-};
+        // Styles for the navigation list
+        ul: `${breakpoints.ul.default} ${breakpoints.ul.md}`,
+        // Styles for list items
+        li: 'text-zeero-on-primary-1',
+        // Styles for navigation links
+        link: 'pointer-events-none opacity-20'
+    }
+}
 
-export default NavbarStyles;
+export default NavbarStyles
